@@ -1148,6 +1148,9 @@ components:
       x-skaffolder-links:
         - 5f01ef816b4b5c069354ef84
         - 5f01ef8f6b4b5c069354ef8e
+        - 5f01ef816b4b5c069354ef7c
+        - 5f01ef8e6b4b5c069354ef88
+        - 5f01f0eb6b4b5c069354ef95
       x-skaffolder-roles:
         - 5f01a5616b4b5c069354ede7
     - x-skaffolder-id: 5f01ef816b4b5c069354ef7c
@@ -1184,7 +1187,9 @@ components:
         - 5f01ef8f6b4b5c069354ef8b
         - 5f01ef8f6b4b5c069354ef89
         - 5f01ef8f6b4b5c069354ef8c
-      x-skaffolder-nesteds: 
+      x-skaffolder-nesteds:
+        - 5f01ef816b4b5c069354ef7c
+        - 5f01f0eb6b4b5c069354ef95
       x-skaffolder-links: 
       x-skaffolder-roles: []
     - x-skaffolder-id: 5f01ef8f6b4b5c069354ef8e
