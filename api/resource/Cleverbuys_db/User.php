@@ -12,32 +12,26 @@
 			type: 'Number'
 		},
 		mail: {
-			type: 'String', 
-			required : true
+			type: 'String'
 		},
 		name: {
-			type: 'String', 
-			required : true
+			type: 'String'
 		},
 		password: {
 			type: 'String', 
 			required : true
 		},
 		postCode: {
-			type: 'String', 
-			required : true
+			type: 'String'
 		},
 		roles: {
-			type: 'String', 
-			required : true
+			type: 'String'
 		},
 		state: {
-			type: 'String', 
-			required : true
+			type: 'String'
 		},
 		surname: {
-			type: 'String', 
-			required : true
+			type: 'String'
 		},
 		town: {
 			type: 'String'
@@ -70,13 +64,13 @@ $app->post('/user',	function () use ($app){
 	$params = array (
 		'lat'	=> isset($body->lat)?$body->lat:'',
 		'lng'	=> isset($body->lng)?$body->lng:'',
-		'mail'	=> $body->mail,
-		'name'	=> $body->name,
+		'mail'	=> isset($body->mail)?$body->mail:'',
+		'name'	=> isset($body->name)?$body->name:'',
 		'password'	=> $body->password,
-		'postCode'	=> $body->postCode,
-		'roles'	=> $body->roles,
-		'state'	=> $body->state,
-		'surname'	=> $body->surname,
+		'postCode'	=> isset($body->postCode)?$body->postCode:'',
+		'roles'	=> isset($body->roles)?$body->roles:'',
+		'state'	=> isset($body->state)?$body->state:'',
+		'surname'	=> isset($body->surname)?$body->surname:'',
 		'town'	=> isset($body->town)?$body->town:'',
 		'username'	=> $body->username,
 			);
@@ -133,13 +127,13 @@ $app->post('/user/:id',	function ($id) use ($app){
 		'id'	=> $id,
 		'lat'	    => isset($body->lat)?$body->lat:'',
 		'lng'	    => isset($body->lng)?$body->lng:'',
-		'mail'	    => $body->mail,
-		'name'	    => $body->name,
+		'mail'	    => isset($body->mail)?$body->mail:'',
+		'name'	    => isset($body->name)?$body->name:'',
 		'password'	    => $body->password,
-		'postCode'	    => $body->postCode,
-		'roles'	    => $body->roles,
-		'state'	    => $body->state,
-		'surname'	    => $body->surname,
+		'postCode'	    => isset($body->postCode)?$body->postCode:'',
+		'roles'	    => isset($body->roles)?$body->roles:'',
+		'state'	    => isset($body->state)?$body->state:'',
+		'surname'	    => isset($body->surname)?$body->surname:'',
 		'town'	    => isset($body->town)?$body->town:'',
 		'username'	    => $body->username	);
 

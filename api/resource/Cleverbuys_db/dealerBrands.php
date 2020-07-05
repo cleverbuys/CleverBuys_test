@@ -57,6 +57,17 @@ $app->delete('/dealerbrands/:id',	function ($id) use ($app){
 	makeQuery("DELETE FROM dealerbrands WHERE _id = :id LIMIT 1", $params);
 
 });
+
+//CRUD - FIND BY brandID
+
+$app->get('/dealerbrands/findBybrandID/:key',	function ($key) use ($app){	
+
+	$params = array (
+		'key'	=> $key,
+	);
+	makeQuery("SELECT * FROM dealerbrands WHERE brandID = :key", $params);
+	
+});
 	
 //CRUD - GET ONE
 	

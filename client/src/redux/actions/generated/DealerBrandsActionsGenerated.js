@@ -61,6 +61,25 @@ let actionsFunction = {
   },
 
 
+  // Find by brandID
+  findBybrandID: function(key) {
+    return function(dispatch) {
+      return DealerBrandsApi
+        .findBybrandID(key)
+        .then(item => {
+          dispatch(actionsFunction.findBybrandIDSuccess(item));
+        })
+        .catch(error => {
+          throw error;
+        });
+    };
+  },
+
+  findBybrandIDSuccess: function(item) {
+    return { type: types.FINDBYBRANDID_DEALERBRANDS_SUCCESS, payload: item };
+  },
+
+
   // Get dealerbrands
   loadDealerBrands: function(id) {
     return function(dispatch) {

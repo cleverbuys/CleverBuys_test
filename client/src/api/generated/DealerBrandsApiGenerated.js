@@ -58,6 +58,22 @@ class DealerBrandsApiGenerated {
   }
 
   /**
+  * dealerBrandsService.findBybrandID
+  *   @description CRUD ACTION findBybrandID
+  *   @param Objectid key Id of the resource brandID to search
+  *
+  */
+  static findBybrandID(id) {
+    return axios.get(DealerBrandsApiGenerated.contextUrl + "/findBybrandID/" + id )
+      .then(response => {
+        return response.data;
+      })
+      .catch(error => {
+        throw error;
+      });
+  }
+
+  /**
   * dealerBrandsService.get
   *   @description CRUD ACTION get
   *   @param ObjectId id Id resource

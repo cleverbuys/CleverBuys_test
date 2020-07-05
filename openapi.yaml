@@ -210,7 +210,7 @@ paths:
       x-skaffolder-returnDesc: 
       x-skaffolder-returnType: 
       x-skaffolder-url: /{id}
-      x-skaffolder-roles: []
+      x-skaffolder-roles:
       summary: CRUD ACTION get
       tags:
         - User
@@ -565,6 +565,39 @@ paths:
           application/json:
             schema:
               $ref: "#/components/schemas/dealerBrands"
+  "/dealerbrands/findBybrandID/{key}":
+    get:
+      x-skaffolder-id: 5f023473eae46f61d75d40da
+      x-skaffolder-name: findBybrandID
+      x-skaffolder-id-resource: 5f01ee396b4b5c069354ef65
+      x-skaffolder-resource: dealerBrands
+      x-skaffolder-crudAction: findBybrandID
+      x-skaffolder-crudType: 
+      x-skaffolder-description: CRUD ACTION findBybrandID
+      x-skaffolder-returnDesc: 
+      x-skaffolder-returnType: 
+      x-skaffolder-url: /findBybrandID/{key}
+      x-skaffolder-roles: []
+      summary: CRUD ACTION findBybrandID
+      tags:
+        - dealerBrands
+      parameters:
+        - name: key
+          x-skaffolder-type: Objectid
+          in: path
+          description: Id of the resource brandID to search
+          required: true
+          schema:
+            type: Objectid
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/dealerBrands"
   /dealership:
     post:
       x-skaffolder-id: 5f01ef506b4b5c069354ef78
@@ -953,12 +986,10 @@ components:
           type: string
           x-skaffolder-id-attr: 5f01a5616b4b5c069354ede0
           x-skaffolder-type: String
-          x-skaffolder-required: true
         name:
           type: string
           x-skaffolder-id-attr: 5f01a5616b4b5c069354ede1
           x-skaffolder-type: String
-          x-skaffolder-required: true
         password:
           type: string
           x-skaffolder-id-attr: 5f01a5616b4b5c069354eddf
@@ -968,22 +999,18 @@ components:
           type: string
           x-skaffolder-id-attr: 5f01ec0d6b4b5c069354ef44
           x-skaffolder-type: String
-          x-skaffolder-required: true
         roles:
           type: string
           x-skaffolder-id-attr: 5f01a5616b4b5c069354ede3
           x-skaffolder-type: String
-          x-skaffolder-required: true
         state:
           type: string
           x-skaffolder-id-attr: 5f01ec0d6b4b5c069354ef43
           x-skaffolder-type: String
-          x-skaffolder-required: true
         surname:
           type: string
           x-skaffolder-id-attr: 5f01a5616b4b5c069354ede2
           x-skaffolder-type: String
-          x-skaffolder-required: true
         town:
           type: string
           x-skaffolder-id-attr: 5f01ec0d6b4b5c069354ef42
@@ -996,13 +1023,7 @@ components:
       x-skaffolder-relations: 
       required:
         - _id
-        - mail
-        - name
         - password
-        - postCode
-        - roles
-        - state
-        - surname
         - username
     brands:
       x-skaffolder-id: 5f01ed406b4b5c069354ef59
@@ -1127,7 +1148,8 @@ components:
       x-skaffolder-links:
         - 5f01ef816b4b5c069354ef84
         - 5f01ef8f6b4b5c069354ef8e
-      x-skaffolder-roles: []
+      x-skaffolder-roles:
+        - 5f01a5616b4b5c069354ede7
     - x-skaffolder-id: 5f01ef816b4b5c069354ef7c
       x-skaffolder-name: brandsEdit
       x-skaffolder-url: /brandses/{id}
